@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sam.fun.view.MailOverviewController">
+   <children>
+      <SplitPane dividerPositions="0.5535117056856187" layoutX="173.0" layoutY="120.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.2533783783783784" orientation="VERTICAL" prefHeight="298.0" prefWidth="328.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <SplitPane dividerPositions="0.2883435582822086" layoutX="-1.0" prefHeight="72.0" prefWidth="328.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <VBox prefHeight="72.0" prefWidth="150.0">
+                                             <children>
+                                                <Label text="Sender:" />
+                                                <Label text="Recipients:" />
+                                                <Label text="Subject:" />
+                                                <Label text="Cron time:" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <VBox prefHeight="72.0" prefWidth="229.0">
+                                             <children>
+                                                <Label fx:id="senderLabel" />
+                                                <Label fx:id="recipientsLabel" />
+                                                <Label fx:id="subjectLabel" />
+                                                <Label fx:id="cronTimeLabel" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <TextField fx:id="mailTextField" alignment="TOP_LEFT" editable="false" prefHeight="210.0" prefWidth="326.0" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.8308080808080808" layoutX="43.0" layoutY="86.0" orientation="VERTICAL" prefHeight="398.0" prefWidth="264.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <ScrollPane prefHeight="326.0" prefWidth="262.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="mailTable" onMouseClicked="#handleActivityOnMailTable" prefHeight="243.0" prefWidth="262.0" AnchorPane.bottomAnchor="-43.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-62.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                              <TableColumn fx:id="subjectColumn" prefWidth="75.0" text="Subject" />
+                                              <TableColumn fx:id="statusColumn" prefWidth="75.0" text="Status" />
+                                            </columns>
+                                          </TableView>
+                                       </children></AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <HBox layoutX="28.0" layoutY="20.0" spacing="40.0">
+                                 <children>
+                                    <Button fx:id="newButton" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleNewMail" text="New" />
+                                    <Button fx:id="editButton" disable="true" layoutX="105.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleEditMail" text="Edit" />
+                                    <Button fx:id="deleteButton" disable="true" layoutX="196.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleDeleteMail" text="Delete" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
